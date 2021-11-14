@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/weapons/New/projectiles/Missile02.tscn" type="PackedScene" id=1]
+
+[node name="MiniMissile" instance=ExtResource( 1 )]
+life = 1.2
+fire_sound = "sfx_02"
+explosion_damage = 28.0

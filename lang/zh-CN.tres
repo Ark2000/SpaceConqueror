@@ -1,0 +1,102 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://lang/template/Lang.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+language = "简体中文"
+PLAY = "开始"
+OPTIONS = "设置"
+CREDITS = "关于"
+HELP = "帮助"
+GO_BACK = "返回"
+GRAPHICS = "图形"
+AUDIO = "音频"
+MISC = "杂项"
+CONTROLS = "控制"
+LANGUAGE = "语言"
+CHROMATIC_ABERRATION = "色差"
+DEPTH_OF_FIELD = "景深"
+MOTION_BLUR = "运动模糊"
+SCREEN_SHAKE = "屏幕晃动"
+ON = "开启"
+OFF = "关闭"
+SOUND_EFFECTS_VOLUME = "音效"
+MUSIC_VOLUME = "音乐"
+VIBRATIONS = "震动"
+MAIN_MENU = "主菜单"
+BACK_TO_GAME = "继续游戏"
+CONFIRM = "确认"
+INCREASE_MAX_HP_1 = "反应装甲 I"
+INCREASE_MAX_HP_1_DESC = "增加护甲上限"
+INCREASE_MAX_HP_3 = "反应装甲 II"
+INCREASE_MAX_HP_3_DESC = "增加护甲上限"
+INCREASE_MAX_SHIELD_1 = "力场 I"
+INCREASE_MAX_SHIELD_1_DESC = "增加护盾上限"
+INCREASE_MAX_SHIELD_3 = "力场 II"
+INCREASE_MAX_SHIELD_3_DESC = "增加护盾上限"
+INCREASE_SHIELD_RECOVERY_1 = "纳米机器人 I"
+INCREASE_SHIELD_RECOVERY_1_DESC = "增加护盾恢复速率"
+INCREASE_SHIELD_RECOVERY_3 = "纳米机器人 II"
+INCREASE_SHIELD_RECOVERY_3_DESC = "增加护盾恢复速率"
+INCREASE_MAX_THERMOLYSIS_1 = "耐热性 I"
+INCREASE_MAX_THERMOLYSIS_1_DESC = "增加耐热性"
+INCREASE_MAX_THERMOLYSIS_3 = "耐热性 II"
+INCREASE_MAX_THERMOLYSIS_3_DESC = "增加耐热性"
+INCREASE_COOLING_RATE_1 = "热辐射 I"
+INCREASE_COOLING_RATE_1_DESC = "增加散热速率"
+INCREASE_COOLING_RATE_3 = "热辐射 II"
+INCREASE_COOLING_RATE_3_DESC = "增加散热速率"
+SELF_REPAIR_1 = "仿生装甲 I"
+SELF_REPAIR_1_DESC = "增加护甲恢复速率"
+SELF_REPAIR_3 = "仿生装甲 II"
+SELF_REPAIR_3_DESC = "增加护甲恢复速率"
+INCREASE_TORQUE_1 = "电磁推进器 I"
+INCREASE_TORQUE_1_DESC = "增加扭矩引擎功率"
+INCREASE_TORQUE_3 = "电磁推进器 II"
+INCREASE_TORQUE_3_DESC = "增加扭矩引擎功率"
+INCREASE_THRUST_1 = "聚变引擎 I"
+INCREASE_THRUST_1_DESC = "增加推进引擎功率"
+INCREASE_THRUST_3 = "聚变引擎 II"
+INCREASE_THRUST_3_DESC = "增加推进引擎功率"
+INCREASE_WEAPON_DROP_CHANCE = "高阶探测器"
+INCREASE_WEAPON_DROP_CHANCE_DESC = "增加武器掉落的几率"
+MORE_OPTIONS = "高阶中央处理器"
+MORE_OPTIONS_DESC = "增加升级时的可选项目"
+MORE_AMMO = "扩容弹舱"
+MORE_AMMO_DESC = "增加武器的初始弹容量"
+VAMPIRE = "能量传递"
+VAMPIRE_DESC = "从对敌伤害中获得治疗"
+INFECTIOUS = "密码破译模块"
+INFECTIOUS_DESC = "敌人死亡时有几率转为为盟友"
+NECROMANCY = "无人机流水线"
+NECROMANCY_DESC = "在周围生产攻击无人机"
+FLASH = "更快"
+FLASH_DESC = "增加武器射速"
+HELP_TEXT = "[center][i]怎么玩[/i][/center]
+
+您是某个太空派系的最后幸存者，驾驶着您的“脉冲星”号战机，在敌人无尽的进攻波次中努力存活下去吧！
+
+[b]基本规则[/b]
+
+- 摧毁敌人的飞船以获取分数、随机掉落的武器包
+- 您必须不停的战斗，以减缓致命力场的扩散速度
+- 当分数达到一定阶段时，可以获取增强组件
+
+[b]控制[/b]
+
+游戏菜单下：
+	
+	Up / Down - 切换选项
+	Space - 确认
+	ESC - 返回
+
+战斗中：
+
+	Up - 加速
+	Left / Right - 转向
+	Z - 切换武器
+	X - 捡起武器
+	Space - 攻击
+	ESC - 暂停"
+CREDITS_TEXT = ""

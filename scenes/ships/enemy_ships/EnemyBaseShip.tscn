@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/ships/enemy_ships/EnemyBaseShip.gd" type="Script" id=1]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=2]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=3]
+[ext_resource path="res://scenes/ships/BaseShip.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 10000.0
+
+[node name="EnemyBaseShip" instance=ExtResource( 4 )]
+script = ExtResource( 1 )
+max_shield = 0.0
+team = 1
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -13.8056, -7.68651, -14.2265, 7.0458, 0.646076, 9.43104, 16.0098, -0.0397377, 1.69839, -9.2299 )
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 2 )
+
+[node name="Seperate" type="Area2D" parent="." index="6"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seperate" index="0"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector" index="0"]
+visible = false
+modulate = Color( 1, 1, 1, 0.0901961 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Seperate" to="." method="_on_Seperate_body_entered"]
+[connection signal="body_exited" from="Seperate" to="." method="_on_Seperate_body_exited"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/res/normal_font_24.tres" type="DynamicFont" id=2]
+
+[node name="ListButton" type="Control"]
+margin_right = 640.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 640, 40 )
+size_flags_vertical = 4
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.333333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.862745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_bottom = 40.0
+color = Color( 0.45098, 0.701961, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Label" parent="HBoxContainer"]
+margin_right = 636.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "  PLAY"
+valign = 1
+
+[node name="Right" type="Label" parent="HBoxContainer"]
+margin_left = 640.0
+margin_right = 640.0
+margin_bottom = 40.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tree_exiting" from="." to="." method="_on_ListButton_tree_exiting"]

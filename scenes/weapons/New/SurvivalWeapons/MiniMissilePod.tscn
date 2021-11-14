@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/weapons/New/ProjectileLauncher.tscn" type="PackedScene" id=1]
+
+[node name="MiniMissilePod" instance=ExtResource( 1 )]
+weapon_name = "Mini Missile Pod"
+projectile_code = "MiniMissile"
+max_cd = 0.1
+burst_cd = 0.5
+burst = 4
+heat = 15.0
+max_error = 0.2
+max_ammo = 100.0

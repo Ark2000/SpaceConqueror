@@ -1,0 +1,167 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/misc/WeaponPack.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/flare_01.png" type="Texture" id=3]
+[ext_resource path="res://assets/image/bulb.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.528796, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 1.0
+color_ramp = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/font/LEMONMILK-Light.otf"
+
+[sub_resource type="DynamicFont" id=5]
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/font/LEMONMILK-Light.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 6 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 53.8576
+
+[sub_resource type="Animation" id=9]
+resource_name = "end"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Particles2D/bulb:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 3, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="WeaponPack" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+lifetime = 2.0
+process_material = SubResource( 3 )
+texture = ExtResource( 3 )
+
+[node name="bulb" type="Sprite" parent="Particles2D"]
+modulate = Color( 1.20773, 1, 1, 0.103865 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 5 )
+text = "Quick Blaster"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = -35.2374
+margin_top = 26.0
+margin_right = 33.7626
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 7 )
+text = "(X) PICK UP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+anims/end = SubResource( 9 )
+anims/start = SubResource( 10 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "flash"
+playback_speed = 0.2
+anims/flash = SubResource( 11 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_WeaponPack_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_WeaponPack_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WarpDrive_00 (mp3cut.net)~1.wav-7fc1016c410aba04784f2fa330b6c199.sample"
+
+[deps]
+
+source_file="res://assets/sound/WarpDrive_00 (mp3cut.net)~1.wav"
+dest_files=[ "res://.import/WarpDrive_00 (mp3cut.net)~1.wav-7fc1016c410aba04784f2fa330b6c199.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

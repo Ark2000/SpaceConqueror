@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/font/LEMONMILK-Light.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/image/icons8-lock-30.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/hud/WeaponInfo.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=8]
+resource_local_to_scene = true
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.164706, 0.164706, 0.164706, 0.784314 )
+border_color = Color( 0.164706, 0.737255, 0.164706, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.945098, 0.882353, 0.309804, 1 )
+
+[node name="WeaponInfo" type="PanelContainer"]
+margin_right = 168.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 168, 42 )
+custom_styles/panel = SubResource( 8 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 164.0
+margin_bottom = 38.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 160.0
+margin_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 20.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 160.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+text = "MINI BLASTER"
+align = 2
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 160.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 0, 3 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 80.0
+percent_visible = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="VBoxContainer"]
+margin_top = 31.0
+margin_right = 160.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 3 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 5 )
+value = 80.0
+percent_visible = false

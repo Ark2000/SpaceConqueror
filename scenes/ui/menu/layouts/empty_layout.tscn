@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="LayoutContainer" type="VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 576.0
+rect_min_size = Vector2( 640, 576 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopPlaceHolder" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 288.0
+size_flags_vertical = 3
+
+[node name="BottomPlaceHolder" type="Control" parent="."]
+margin_top = 288.0
+margin_right = 640.0
+margin_bottom = 576.0
+size_flags_vertical = 3

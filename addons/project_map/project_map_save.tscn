@@ -1,0 +1,1468 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/project_map/pm_file_node.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/project_map/pm_comment_node.gd" type="Script" id=2]
+[ext_resource path="res://addons/project_map/node.stylebox" type="StyleBox" id=3]
+[ext_resource path="res://addons/project_map/node_selected.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://addons/project_map/project_map.gd" type="Script" id=5]
+[ext_resource path="res://addons/project_map/pm_comment_node.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/project_map/pm_file_node.gd" type="Script" id=7]
+[ext_resource path="res://addons/project_map/pm_group_node.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/project_map/group.stylebox" type="StyleBox" id=9]
+[ext_resource path="res://addons/project_map/group_selected.stylebox" type="StyleBox" id=10]
+[ext_resource path="res://addons/project_map/pm_group_node.gd" type="Script" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.231373, 0.309804, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[node name="ProjectMap" type="GraphEdit"]
+visible = false
+margin_right = 1129.0
+margin_bottom = 675.0
+rect_min_size = Vector2( 500, 500 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 1 )
+scroll_offset = Vector2( -312.805, 0 )
+snap_distance = 32
+zoom = 0.8
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CommentNode" type="GraphNode" parent="." instance=ExtResource( 6 )]
+margin_left = -11.995
+margin_top = -8.8
+margin_right = 362.005
+margin_bottom = 429.2
+rect_min_size = Vector2( 374, 438 )
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 6 )
+custom_styles/comment = SubResource( 7 )
+offset = Vector2( -406, -11 )
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+comment_text = "About Singletons
+
+Butler: Use which to create various entities.
+
+Config: Manage game configs and saved data.
+
+Event: Global events, for convenience.
+
+Res: Preload everything needed.
+
+SoundPlayer: Play BGM or SFX.
+
+Utils: Contains some static tool functions.
+
+
+"
+comment_rect = Vector2( 374, 438 )
+
+[node name="GroupNode" type="GraphNode" parent="." instance=ExtResource( 8 )]
+margin_left = -173.595
+margin_top = 25.6
+margin_right = 0.404999
+margin_bottom = 249.6
+rect_min_size = Vector2( 160, 224 )
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 10 )
+custom_styles/comment = ExtResource( 9 )
+offset = Vector2( -608, 32 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Global Singletons"
+
+[node name="GroupNode2" type="GraphNode" parent="." instance=ExtResource( 8 )]
+margin_left = -531.995
+margin_top = 25.6
+margin_right = -341.995
+margin_bottom = 249.6
+rect_min_size = Vector2( 128, 224 )
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 10 )
+custom_styles/comment = ExtResource( 9 )
+offset = Vector2( -1056, 32 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Multiple Languages"
+
+[node name="GroupNode3" type="GraphNode" parent="." instance=ExtResource( 8 )]
+margin_left = -531.995
+margin_top = 256.0
+margin_right = -179.994
+margin_bottom = 672.0
+rect_min_size = Vector2( 352, 416 )
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 10 )
+custom_styles/comment = ExtResource( 9 )
+offset = Vector2( -1056, 320 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Ships"
+
+[node name="GroupNode4" type="GraphNode" parent="." instance=ExtResource( 8 )]
+margin_left = -173.595
+margin_top = 332.8
+margin_right = 402.405
+margin_bottom = 1164.8
+rect_min_size = Vector2( 576, 832 )
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_styles/commentfocus = ExtResource( 10 )
+custom_styles/comment = ExtResource( 9 )
+offset = Vector2( -608, 416 )
+resizable = true
+comment = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+group_name = "Weapons"
+
+[node name="FileNode" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 51.2
+margin_right = -68.5952
+margin_bottom = 83.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 64 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/Butler.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode2" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 76.8
+margin_right = -65.5952
+margin_bottom = 108.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 96 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/Config.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode3" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 102.4
+margin_right = -72.5952
+margin_bottom = 134.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 128 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/Event.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode4" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 128.0
+margin_right = -85.5952
+margin_bottom = 160.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 160 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/Res.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode5" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 153.6
+margin_right = -25.5952
+margin_bottom = 185.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 192 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/SoundPlayer.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode6" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 179.2
+margin_right = -79.5952
+margin_bottom = 211.201
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 224 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://global/Utils.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode7" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 51.2
+margin_right = -434.995
+margin_bottom = 83.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 64 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://lang/template/Lang.gd"
+resource_type = 2
+icon_class = "Script"
+
+[node name="FileNode8" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 76.8
+margin_right = -447.995
+margin_bottom = 108.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 96 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://lang/ja.tres"
+resource_type = 3
+icon_class = "Resource"
+
+[node name="FileNode9" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 102.4
+margin_right = -444.995
+margin_bottom = 134.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 128 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://lang/ru.tres"
+resource_type = 3
+icon_class = "Resource"
+
+[node name="FileNode10" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 128.0
+margin_right = -418.995
+margin_bottom = 160.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 160 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://lang/zh-CN.tres"
+resource_type = 3
+icon_class = "Resource"
+
+[node name="FileNode11" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 153.6
+margin_right = -419.995
+margin_bottom = 185.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 192 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://lang/zh-HK.tres"
+resource_type = 3
+icon_class = "Resource"
+
+[node name="FileNode12" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 281.6
+margin_right = -395.995
+margin_bottom = 343.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 352 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/BaseShip.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/BaseShip.gd"
+script_name = "BaseShip.gd"
+
+[node name="FileNode13" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -403.995
+margin_top = 281.6
+margin_right = -288.995
+margin_bottom = 343.601
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -896, 352 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/Player.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/Player.gd"
+script_name = "Player.gd"
+
+[node name="FileNode14" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 358.4
+margin_right = -350.995
+margin_bottom = 420.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/EnemyBaseShip.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/EnemyBaseShip.gd"
+script_name = "EnemyBaseShip.gd"
+
+[node name="FileNode21" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -378.395
+margin_top = 358.4
+margin_right = -266.395
+margin_bottom = 420.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -864, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Priest.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Priest.gd"
+script_name = "Priest.gd"
+
+[node name="FileNode15" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 409.6
+margin_right = -403.995
+margin_bottom = 471.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 512 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Believer.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Believer.gd"
+script_name = "Believer.gd"
+
+[node name="FileNode17" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 460.8
+margin_right = -394.995
+margin_bottom = 522.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 576 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Guardian.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Guardian.gd"
+script_name = "Guardian.gd"
+
+[node name="FileNode19" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -531.995
+margin_top = 512.0
+margin_right = -384.995
+margin_bottom = 574.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -1056, 640 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Missionary.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Missionary.gd"
+script_name = "Missionary.gd"
+
+[node name="FileNode16" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -378.395
+margin_top = 409.6
+margin_right = -247.395
+margin_bottom = 471.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -864, 512 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Cardinal.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Cardinal.gd"
+script_name = "Cardinal.gd"
+
+[node name="FileNode18" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -378.395
+margin_top = 460.8
+margin_right = -259.395
+margin_bottom = 522.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -864, 576 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Martyr.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Martyr.gd"
+script_name = "Martyr.gd"
+
+[node name="FileNode20" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -378.395
+margin_top = 512.0
+margin_right = -254.395
+margin_bottom = 574.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -864, 640 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ships/enemy_ships/Paladin.tscn"
+icon_class = "RigidBody2D"
+script_path = "res://scenes/ships/enemy_ships/Paladin.gd"
+script_name = "Paladin.gd"
+
+[node name="FileNode22" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 409.6
+margin_right = -47.5952
+margin_bottom = 471.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 512 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/Aureola.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/Aureola.gd"
+script_name = "Aureola.gd"
+
+[node name="FileNode23" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 460.8
+margin_right = -35.5952
+margin_bottom = 522.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 576 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/DeathRay.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/DeathRay.gd"
+script_name = "DeathRay.gd"
+
+[node name="FileNode24" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 512.0
+margin_right = -63.5952
+margin_bottom = 574.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 640 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/Laser.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/Laser.gd"
+script_name = "Laser.gd"
+
+[node name="FileNode26" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -173.595
+margin_top = 563.2
+margin_right = 2.40479
+margin_bottom = 625.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -608, 704 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/SuicideBomber.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/SuicideBomber.gd"
+script_name = "SuicideBomber.gd"
+
+[node name="FileNode25" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = -71.195
+margin_top = 358.4
+margin_right = 68.805
+margin_bottom = 420.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -480, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/NWeapon.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/NWeapon.gd"
+script_name = "NWeapon.gd"
+
+[node name="FileNode28" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 486.4
+margin_right = 269.005
+margin_bottom = 548.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 608 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/HeavyMissile.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/Missile02.gd"
+script_name = "Missile02.gd"
+
+[node name="FileNode29" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 537.6
+margin_right = 259.005
+margin_bottom = 599.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 672 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/MiniMissile.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/Missile02.gd"
+script_name = "Missile02.gd"
+
+[node name="FileNode30" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 588.8
+margin_right = 245.005
+margin_bottom = 650.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 736 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Missile02.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/Missile02.gd"
+script_name = "Missile02.gd"
+
+[node name="FileNode31" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 640.0
+margin_right = 245.005
+margin_bottom = 702.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 800 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Missile03.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/Missile02.gd"
+script_name = "Missile02.gd"
+
+[node name="FileNode32" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 691.2
+margin_right = 245.005
+margin_bottom = 753.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 864 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Pulse02.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/NProjectile.gd"
+script_name = "NProjectile.gd"
+
+[node name="FileNode33" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 742.4
+margin_right = 245.005
+margin_bottom = 804.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 928 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Pulse03.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/NProjectile.gd"
+script_name = "NProjectile.gd"
+
+[node name="FileNode34" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 793.6
+margin_right = 278.005
+margin_bottom = 855.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 992 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Pulse_Believer.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/NProjectile.gd"
+script_name = "NProjectile.gd"
+
+[node name="FileNode35" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 844.8
+margin_right = 281.005
+margin_bottom = 906.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 1056 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Pulse_Cardinal.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/NProjectile.gd"
+script_name = "NProjectile.gd"
+
+[node name="FileNode36" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 108.005
+margin_top = 896.0
+margin_right = 311.005
+margin_bottom = 958.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -256, 1120 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/projectiles/Pulse_HeavyBlaster.tscn"
+icon_class = "Area2D"
+script_path = "res://scenes/weapons/New/projectiles/NProjectile.gd"
+script_name = "NProjectile.gd"
+
+[node name="FileNode27" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 82.405
+margin_top = 435.2
+margin_right = 281.405
+margin_bottom = 497.201
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( -288, 544 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/weapons/New/ProjectileLauncher.tscn"
+icon_class = "Node2D"
+script_path = "res://scenes/weapons/New/ProjectileLauncher.gd"
+script_name = "ProjectileLauncher.gd"
+
+[node name="FileNode37" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 358.4
+margin_right = 522.205
+margin_bottom = 420.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/Intro.tscn"
+icon_class = "Control"
+script_path = "res://scenes/ui/Intro.gd"
+script_name = "Intro.gd"
+
+[node name="FileNode38" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 517.605
+margin_top = 358.4
+margin_right = 664.605
+margin_bottom = 420.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 256, 448 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/MainMenu.tscn"
+icon_class = "Control"
+script_path = "res://scenes/ui/MainMenu.gd"
+script_name = "MainMenu.gd"
+
+[node name="FileNode39" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 486.4
+margin_right = 552.205
+margin_bottom = 548.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 608 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_01.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_01.gd"
+script_name = "layout_01.gd"
+
+[node name="FileNode41" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 537.6
+margin_right = 552.205
+margin_bottom = 599.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 672 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_03.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_03.gd"
+script_name = "layout_03.gd"
+
+[node name="FileNode40" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 486.4
+margin_right = 705.805
+margin_bottom = 548.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 608 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_02.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_02.gd"
+script_name = "layout_02.gd"
+
+[node name="FileNode42" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 537.6
+margin_right = 705.805
+margin_bottom = 599.6
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 672 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_04.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_04.gd"
+script_name = "layout_04.gd"
+
+[node name="FileNode43" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 588.8
+margin_right = 552.205
+margin_bottom = 650.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 736 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_05.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_05.gd"
+script_name = "layout_05.gd"
+
+[node name="FileNode44" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 588.8
+margin_right = 705.805
+margin_bottom = 650.8
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 736 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_06.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_06.gd"
+script_name = "layout_06.gd"
+
+[node name="FileNode45" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 640.0
+margin_right = 552.205
+margin_bottom = 702.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 800 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_07.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_07.gd"
+script_name = "layout_07.gd"
+
+[node name="FileNode46" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 640.0
+margin_right = 705.805
+margin_bottom = 702.0
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 800 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_08.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_08.gd"
+script_name = "layout_08.gd"
+
+[node name="FileNode47" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 691.2
+margin_right = 552.205
+margin_bottom = 753.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 864 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_09.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_09.gd"
+script_name = "layout_09.gd"
+
+[node name="FileNode48" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 691.2
+margin_right = 705.805
+margin_bottom = 753.2
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 864 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_10.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_10.gd"
+script_name = "layout_10.gd"
+
+[node name="FileNode49" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 415.205
+margin_top = 742.4
+margin_right = 552.205
+margin_bottom = 804.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 128, 928 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_11.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_11.gd"
+script_name = "layout_11.gd"
+
+[node name="FileNode50" type="GraphNode" parent="." instance=ExtResource( 1 )]
+margin_left = 568.805
+margin_top = 742.4
+margin_right = 705.805
+margin_bottom = 804.4
+rect_scale = Vector2( 0.8, 0.8 )
+mouse_filter = 1
+custom_constants/port_offset = 0
+custom_styles/frame = ExtResource( 3 )
+custom_styles/selectedframe = ExtResource( 4 )
+offset = Vector2( 320, 928 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+path = "res://scenes/ui/menu/layouts/layout_12.tscn"
+icon_class = "VBoxContainer"
+script_path = "res://scenes/ui/menu/layouts/layout_12.gd"
+script_name = "layout_12.gd"
+
+[connection signal="delete_nodes_request" from="." to="." method="_on_GraphEdit_delete_nodes_request"]

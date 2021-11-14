@@ -1,0 +1,123 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://lang/template/Lang.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+language = "繁體中文"
+PLAY = "遊玩"
+OPTIONS = "選項"
+CREDITS = "製作人員"
+HELP = "HELP"
+GO_BACK = "返回上一層"
+GRAPHICS = "圖形設定"
+AUDIO = "音頻設定"
+MISC = "MISC"
+CONTROLS = "控制設定"
+LANGUAGE = "更改語言"
+CHROMATIC_ABERRATION = "色差"
+DEPTH_OF_FIELD = "景深"
+MOTION_BLUR = "運動模糊"
+SCREEN_SHAKE = "屏幕晃動"
+ON = "激活"
+OFF = "關閉"
+SOUND_EFFECTS_VOLUME = "遊戲音效"
+MUSIC_VOLUME = "背景音樂"
+VIBRATIONS = "手柄震動"
+MAIN_MENU = "主菜單"
+BACK_TO_GAME = "繼續遊戲"
+CONFIRM = "確認"
+INCREASE_MAX_HP_1 = "反應裝甲 I"
+INCREASE_MAX_HP_1_DESC = "增加護甲上限"
+INCREASE_MAX_HP_3 = "反應裝甲 II"
+INCREASE_MAX_HP_3_DESC = "增加護甲上限"
+INCREASE_MAX_SHIELD_1 = "力場 I"
+INCREASE_MAX_SHIELD_1_DESC = "增加護盾上限"
+INCREASE_MAX_SHIELD_3 = "力場 II"
+INCREASE_MAX_SHIELD_3_DESC = "增加護盾上限"
+INCREASE_SHIELD_RECOVERY_1 = "納米機器人 I"
+INCREASE_SHIELD_RECOVERY_1_DESC = "增加護盾恢復速率"
+INCREASE_SHIELD_RECOVERY_3 = "納米機器人 II"
+INCREASE_SHIELD_RECOVERY_3_DESC = "增加護盾恢復速率"
+INCREASE_MAX_THERMOLYSIS_1 = "耐熱性 I"
+INCREASE_MAX_THERMOLYSIS_1_DESC = "增加耐熱性"
+INCREASE_MAX_THERMOLYSIS_3 = "耐熱性 II"
+INCREASE_MAX_THERMOLYSIS_3_DESC = "增加耐熱性"
+INCREASE_COOLING_RATE_1 = "熱輻射 I"
+INCREASE_COOLING_RATE_1_DESC = "增加散熱速率"
+INCREASE_COOLING_RATE_3 = "熱輻射 II"
+INCREASE_COOLING_RATE_3_DESC = "增加散熱速率"
+SELF_REPAIR_1 = "仿生裝甲 I"
+SELF_REPAIR_1_DESC = "增加護甲恢復速率"
+SELF_REPAIR_3 = "仿生裝甲 II"
+SELF_REPAIR_3_DESC = "增加護甲恢復速率"
+INCREASE_TORQUE_1 = "電磁推進器 I"
+INCREASE_TORQUE_1_DESC = "增加扭矩引擎功率"
+INCREASE_TORQUE_3 = "電磁推進器 II"
+INCREASE_TORQUE_3_DESC = "增加扭矩引擎功率"
+INCREASE_THRUST_1 = "聚變引擎 I"
+INCREASE_THRUST_1_DESC = "增加推進引擎功率"
+INCREASE_THRUST_3 = "聚變引擎 II"
+INCREASE_THRUST_3_DESC = "增加推進引擎功率"
+INCREASE_WEAPON_DROP_CHANCE = "高階探測器"
+INCREASE_WEAPON_DROP_CHANCE_DESC = "增加武器掉落的幾率"
+MORE_OPTIONS = "高階中央處理器"
+MORE_OPTIONS_DESC = "增加升級時的可選項目"
+MORE_AMMO = "擴容彈艙"
+MORE_AMMO_DESC = "增加武器的初始彈容量"
+VAMPIRE = "能量傳遞"
+VAMPIRE_DESC = "從對敵傷害中獲得治療"
+INFECTIOUS = "密碼破譯模塊"
+INFECTIOUS_DESC = "敵人死亡時有幾率轉為為盟友"
+NECROMANCY = "無人機流水線"
+NECROMANCY_DESC = "在周圍生產攻擊無人機"
+FLASH = "更快"
+FLASH_DESC = "增加武器射速"
+HELP_TEXT = "[center][i]怎麽玩[/i][/center]
+
+您是某個太空派系的最後幸存者，駕駛著您的「脈沖星」號戰機，在敵人無盡的進攻波次中努力存活下去吧！
+
+[b]基本規則[/b]
+
+- 摧毀敵人的飛船以獲取分數、隨機掉落的武器包
+- 您必須不停的戰鬥，以減緩致命力場的擴散速度
+- 當分數達到一定階段時，可以獲取增強組件
+
+[b]控製[/b]
+
+遊戲菜單下：
+	
+	Up / Down - 切換選項
+	Space - 確認
+	ESC - 返回
+
+戰鬥中：
+
+	Up - 加速
+	Left / Right - 轉向
+	Z - 切換武器
+	X - 撿起武器
+	Space - 攻擊
+	ESC - 暫停"
+CREDITS_TEXT = "
+Space Conqueror (v0.1.0)
+
+developer: k2kra (k2kra@outlook.com)
+
+I used a lot of assets from the Internet.
+
+THANKS:
+
+Endless Sky Project (https://endless-sky.github.io/)
+
+yd (https://opengameart.org/content/another-space-background-track)
+
+Pablo Roman Andrioli (https://www.shadertoy.com/view/XlfGRj)
+
+Alexander Nakarada (https://freepd.com/electronic.php)
+
+GDQuest (https://github.com/GDQuest/godot-2d-space-game)
+
+And more...
+
+"

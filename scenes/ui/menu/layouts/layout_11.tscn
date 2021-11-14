@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/Separator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/layouts/empty_layout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/menu/layouts/layout_11.gd" type="Script" id=4]
+
+[node name="LayoutContainer" instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="TopPlaceHolder" parent="." index="0"]
+margin_bottom = 228.0
+
+[node name="ListButton" parent="." index="1" instance=ExtResource( 3 )]
+margin_top = 228.0
+margin_bottom = 268.0
+
+[node name="Left" parent="ListButton/HBoxContainer" index="0"]
+margin_right = 578.0
+text = "  SKIP OPENING ANIMATION"
+
+[node name="Right" parent="ListButton/HBoxContainer" index="1"]
+margin_left = 582.0
+text = "OFF  "
+
+[node name="Seperator5" parent="." index="2" instance=ExtResource( 1 )]
+margin_top = 268.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="ListButton2" parent="." index="3" instance=ExtResource( 3 )]
+margin_top = 308.0
+margin_bottom = 348.0
+
+[node name="Left" parent="ListButton2/HBoxContainer" index="0"]
+text = "  GO BACK"
+
+[node name="BottomPlaceHolder" parent="." index="4"]
+margin_top = 348.0
+
+[editable path="ListButton"]
+[editable path="ListButton2"]

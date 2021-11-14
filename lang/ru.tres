@@ -1,0 +1,105 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://lang/template/Lang.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+language = "русский"
+PLAY = "ИГРАТЬ"
+OPTIONS = "ПАРАМЕТРЫ"
+CREDITS = "КРЕДИТЫ"
+HELP = "HELP"
+GO_BACK = "ВЕРНИТЕСЬ НАЗАД"
+GRAPHICS = "ГРАФИКА"
+AUDIO = "АУДИО"
+MISC = "MISC"
+CONTROLS = "УПРАВЛЕНИЕ"
+LANGUAGE = "ЯЗЫК"
+CHROMATIC_ABERRATION = "ХРОМАТИЧЕСКАЯ АБЕРРАЦИЯ"
+DEPTH_OF_FIELD = "ГЛУБИНА РЕЗКОСТИ"
+MOTION_BLUR = "РАЗМЫТОСТЬ"
+SCREEN_SHAKE = "ЭКРАН ВЗЯТЬ"
+ON = "ON"
+OFF = "OFF"
+SOUND_EFFECTS_VOLUME = "ГРОМКОСТЬ ЗВУКОВОГО ЭФФЕКТА"
+MUSIC_VOLUME = "ГРОМКОСТЬ МУЗЫКИ"
+VIBRATIONS = "ВИБРАЦИИ"
+MAIN_MENU = "ГЛАВНОЕ МЕНЮ"
+BACK_TO_GAME = "ВЕРНУТЬСЯ К ИГРЕ"
+CONFIRM = "ПОДТВЕРДИТЬ"
+INCREASE_MAX_HP_1 = "РЕАКТИВНАЯ АРМИЯ I"
+INCREASE_MAX_HP_1_DESC = "Increase max armor"
+INCREASE_MAX_HP_3 = "РЕАКТИВНАЯ АРМИЯ II"
+INCREASE_MAX_HP_3_DESC = "Increase max armor"
+INCREASE_MAX_SHIELD_1 = "FORCE FIELD I"
+INCREASE_MAX_SHIELD_1_DESC = "Increase max shield"
+INCREASE_MAX_SHIELD_3 = "FORCE FIELD II"
+INCREASE_MAX_SHIELD_3_DESC = "Increase max shield"
+INCREASE_SHIELD_RECOVERY_1 = "NANOBOTS I"
+INCREASE_SHIELD_RECOVERY_1_DESC = "Increase shield recovery rate"
+INCREASE_SHIELD_RECOVERY_3 = "NANOBOTS II"
+INCREASE_SHIELD_RECOVERY_3_DESC = "Increase shield recovery rate"
+INCREASE_MAX_THERMOLYSIS_1 = "HOT RESISTANCE I"
+INCREASE_MAX_THERMOLYSIS_1_DESC = "Increase heat resistrance"
+INCREASE_MAX_THERMOLYSIS_3 = "HOT RESISTANCE II"
+INCREASE_MAX_THERMOLYSIS_3_DESC = "Increase heat resistance"
+INCREASE_COOLING_RATE_1 = "THERMAL RADIATION I"
+INCREASE_COOLING_RATE_1_DESC = "Increase cooling rate"
+INCREASE_COOLING_RATE_3 = "THERMAL RADIATION II"
+INCREASE_COOLING_RATE_3_DESC = "Increase cooling rate"
+SELF_REPAIR_1 = "BIONIC ARMOR I"
+SELF_REPAIR_1_DESC = "Increase armor recovery rate"
+SELF_REPAIR_3 = "BIONIC ARMOR II"
+SELF_REPAIR_3_DESC = "Increase armor recovery rate"
+INCREASE_TORQUE_1 = "EM DRIVE I"
+INCREASE_TORQUE_1_DESC = "Increase power of torque engine"
+INCREASE_TORQUE_3 = "EM DRIVE II"
+INCREASE_TORQUE_3_DESC = "Increase power of torque engine"
+INCREASE_THRUST_1 = "FUSION ENGINE I"
+INCREASE_THRUST_1_DESC = "Increase power of thrust engine"
+INCREASE_THRUST_3 = "FUSION ENGINE II"
+INCREASE_THRUST_3_DESC = "Increase power of thrust engine"
+INCREASE_WEAPON_DROP_CHANCE = "ADVANCAED RADAR"
+INCREASE_WEAPON_DROP_CHANCE_DESC = "Increase chance of dropped weapon"
+MORE_OPTIONS = "ADVANCED CPU"
+MORE_OPTIONS_DESC = "More options when upgrade"
+MORE_AMMO = "EXTENDED AMMO BAY"
+MORE_AMMO_DESC = "More initial ammo of weapons"
+VAMPIRE = "ENERGY TRANSMISSION"
+VAMPIRE_DESC = "Get healed when enemy is hit"
+INFECTIOUS = "CRYPTOGRAPHER"
+INFECTIOUS_DESC = "Turn your enemies into allies if possible"
+NECROMANCY = "DRONE FACTORY"
+NECROMANCY_DESC = "summon drones around you"
+FLASH = "FASTER AND FASTER"
+FLASH_DESC = "Increase fire rate"
+HELP_TEXT = "
+[center][i]HOW TO PLAY[/i][/center]
+
+You are the last survivor of a space faction. Try to survive endless waves of  enemy attacks with your \"pulsar\" scout.
+
+[b]Basic Rules[/b]
+
+- Destroy enemy ships to gain points and randomly dropped weapons
+
+- You must constantly fight to slow down the spread of the deadly force field
+
+- When the score reaches a certain stage, you will obtain enhanced components
+
+[b]Controls[/b]
+
+When in menu: 
+	
+	Up / Down - Switch Items
+	Space - Confirm
+	ESC - Go Back
+
+When fighting:
+
+	Up - Accelerate
+	Left / Right - Turn Around
+	Z - Change Weapon
+	X - Pick Up
+	Space - Attack
+	ESC - Pause
+"

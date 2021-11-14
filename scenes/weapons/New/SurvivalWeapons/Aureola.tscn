@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/weapons/New/Aureola.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+radius = 26.0
+
+[node name="Aureola" instance=ExtResource( 1 )]
+damage = 55.0
+radius = 320.0
+max_ammo = 30.0
+heat = 45.0
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource( 1 )

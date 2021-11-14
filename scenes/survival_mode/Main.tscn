@@ -1,0 +1,445 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://assets/image/berserker.png" type="Texture" id=1]
+[ext_resource path="res://assets/image/pngfind.com-crack-png-583540.png" type="Texture" id=2]
+[ext_resource path="res://assets/image/flivver.png" type="Texture" id=3]
+[ext_resource path="res://scenes/misc/RestrictedZone.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://scenes/misc/WeaponPack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ships/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/misc/GoodCamera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/misc/RestrictedZone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/ui/hud/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/ui/hud/CountDown.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/survival_mode/Main.gd" type="Script" id=12]
+[ext_resource path="res://scenes/survival_mode/Monitor.gd" type="Script" id=13]
+[ext_resource path="res://assets/shader/StarNestRetro.gdshader" type="Shader" id=14]
+[ext_resource path="res://assets/font/Roboto-Italic.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/font/LEMONMILK-Light.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://scenes/ui/menu/MenuUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/survival_mode/Upgrades.gd" type="Script" id=18]
+[ext_resource path="res://assets/image/vignette.png" type="Texture" id=19]
+[ext_resource path="res://assets/shader/aberration.gdshader" type="Shader" id=20]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 20 )
+shader_param/p = 0.001
+shader_param/mask = ExtResource( 19 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 2
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 8
+extra_spacing_space = 4
+font_data = ExtResource( 16 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 14 )
+shader_param/iMouse = Vector2( 0, 0 )
+
+[sub_resource type="Animation" id=6]
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 6.5, 7, 7.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("UI/Control/ColorRect:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 11.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -86 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("UI/Control/ColorRect2:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 11.5, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 634 ), Vector2( 0, 634 ), Vector2( 0, 720 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("UI/HUD:layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 1 ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_physics_process"
+}, {
+"args": [ true ],
+"method": "set_physics_process"
+} ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("UI/Control/ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("UI/Control/ColorRect2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Actor:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 90.0002, 400.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Actor:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -369, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Player:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("UI/ColorRect:color")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 6.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Actor:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("UI/ColorRect2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 8.5, 11.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("UI/ColorRect2:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 8.5, 9, 11, 11.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Actor:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.219608, 0.219608, 0.219608, 1 ), Color( 0.219608, 0.219608, 0.219608, 1 ), Color( 2, 2, 2, 1 ) ]
+}
+
+[sub_resource type="Environment" id=7]
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.5
+
+[node name="Main" type="Node2D"]
+position = Vector2( 1, 0 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 2539.62 ],
+"_edit_vertical_guides_": [ 3703.51 ]
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Upgrades" type="Node" parent="."]
+script = ExtResource( 18 )
+
+[node name="Monitor" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[node name="VisualFX" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Aberration" type="ColorRect" parent="VisualFX"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vignette" type="TextureRect" parent="VisualFX"]
+modulate = Color( 1, 1, 1, 0.0392157 )
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CountDown" parent="UI" instance=ExtResource( 11 )]
+visible = false
+
+[node name="HUD" parent="UI" instance=ExtResource( 10 )]
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+margin_bottom = -126.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Unknown:  Show me your WORTH!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/Control"]
+visible = false
+anchor_right = 1.0
+margin_top = -86.0
+rect_min_size = Vector2( 1280, 86 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="UI/Control"]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 1280, 86 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 86.0
+margin_bottom = -86.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "The Graves"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuUI" parent="UI" instance=ExtResource( 17 )]
+pause_mode = 2
+layer = -1
+
+[node name="Label2" type="Label" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CosmosBackground" type="Sprite" parent="."]
+material = SubResource( 5 )
+scale = Vector2( 200, 200 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Actor" type="Sprite" parent="."]
+visible = false
+modulate = Color( 2, 2, 2, 1 )
+light_mask = 2
+use_parent_material = true
+rotation = 6.98132
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="flivver" type="Sprite" parent="Actor"]
+show_behind_parent = true
+light_mask = 2
+use_parent_material = true
+position = Vector2( -4.76837e-07, -8.84332 )
+texture = ExtResource( 3 )
+
+[node name="CrackMask" type="Light2D" parent="Actor"]
+position = Vector2( 0.374573, 3.74577 )
+scale = Vector2( 0.134007, 0.23086 )
+texture = ExtResource( 2 )
+color = Color( 0.752941, 0.494118, 0.337255, 1 )
+energy = 5.19
+range_item_cull_mask = 2
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+
+[node name="GoodCamera" parent="." instance=ExtResource( 8 )]
+rotating = true
+current = true
+focus = NodePath("../Player")
+max_offset = 20.0
+max_angle = 0.1
+
+[node name="RestrictedZone" parent="." instance=ExtResource( 9 )]
+z_index = 1
+script = ExtResource( 4 )
+radius = 1000.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Intro = SubResource( 6 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )
+
+[node name="WeaponPack" parent="." instance=ExtResource( 6 )]
+position = Vector2( 176, 154 )
+weapon_type = "MiniMissilePod"
+
+[connection signal="player_entered" from="Monitor" to="." method="_on_Monitor_player_entered"]
+[connection signal="player_exited" from="Monitor" to="." method="_on_Monitor_player_exited"]
+[connection signal="countdown_is_over" from="UI/CountDown" to="." method="_on_CountDown_countdown_is_over"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

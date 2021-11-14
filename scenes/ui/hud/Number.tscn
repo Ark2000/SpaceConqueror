@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/image/numbers_lemonmilk.png" type="Texture" id=1]
+[ext_resource path="res://scenes/ui/hud/Number.gd" type="Script" id=2]
+[ext_resource path="res://assets/shader/DirectionalBlur.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/Samples = 32
+shader_param/Intensity = 0.0
+shader_param/angle = 0.0
+
+[node name="Number" type="Control"]
+margin_right = 36.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 92, 171 )
+rect_clip_content = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 1 )
+margin_right = 92.0
+margin_bottom = 1881.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/ships/enemy_ships/EnemyBaseShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/weapons/New/ProjectileLauncher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=4]
+[ext_resource path="res://assets/image/combat drone.png" type="Texture" id=5]
+[ext_resource path="res://scenes/misc/AfterburnerFlame.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ships/enemy_ships/Believer.gd" type="Script" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+
+[node name="Believer" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+code_name = "Believer"
+max_hp = 80.0
+max_linear_speed = 220.0
+max_thrust = 80.0
+max_torque = 30.0
+death_bloom_size = 1.0
+
+[node name="AfterburnerFlame" parent="Afterburners" index="0" instance=ExtResource( 6 )]
+position = Vector2( -13.097, -0.0168257 )
+scale = Vector2( 0.408, 0.786 )
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="combat drone" type="Sprite" parent="SPrite/Chartlet" index="0"]
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="ProjectileLauncher" parent="Weapons" index="0" instance=ExtResource( 2 )]
+position = Vector2( 0.616596, -0.215965 )
+weapon_name = "Believer Blaster"
+projectile_code = "Pulse_Believer"
+max_cd = 1.0
+heat = 1.0
+max_ammo = 2000.0
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="EnemyDetector" index="0"]
+visible = true

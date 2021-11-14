@@ -1,0 +1,101 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://lang/template/Lang.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+language = "日本語"
+PLAY = "始める"
+OPTIONS = "設定"
+CREDITS = "だいたい"
+HELP = "HELP"
+GO_BACK = "戻る"
+GRAPHICS = "グラフィックス"
+AUDIO = "オーディオ"
+MISC = "MISC"
+CONTROLS = "コントロール"
+LANGUAGE = "言語"
+CHROMATIC_ABERRATION = "色収差"
+DEPTH_OF_FIELD = "被写界深度"
+MOTION_BLUR = "モーションブラー"
+SCREEN_SHAKE = "スクリーンシェイク"
+ON = "ON"
+OFF = "OFF"
+SOUND_EFFECTS_VOLUME = "効果音の音量"
+MUSIC_VOLUME = "音楽ボリューム"
+VIBRATIONS = "振動"
+MAIN_MENU = "メインメニュー"
+BACK_TO_GAME = "ゲームを続ける"
+CONFIRM = "確認"
+INCREASE_MAX_HP_1 = "反応装甲 I"
+INCREASE_MAX_HP_1_DESC = "装甲の上限を上げる"
+INCREASE_MAX_HP_3 = "反応装甲 II"
+INCREASE_MAX_HP_3_DESC = "装甲の上限を上げる"
+INCREASE_MAX_SHIELD_1 = "フォースフィールド I"
+INCREASE_MAX_SHIELD_1_DESC = "シールド制限を増やす"
+INCREASE_MAX_SHIELD_3 = "フォースフィールド II"
+INCREASE_MAX_SHIELD_3_DESC = "シールド制限を増やす"
+INCREASE_SHIELD_RECOVERY_1 = "ナノロボット I"
+INCREASE_SHIELD_RECOVERY_1_DESC = "シールド回復率を上げる"
+INCREASE_SHIELD_RECOVERY_3 = "ナノロボット II"
+INCREASE_SHIELD_RECOVERY_3_DESC = "シールド回復率を上げる"
+INCREASE_MAX_THERMOLYSIS_1 = "耐熱性 I"
+INCREASE_MAX_THERMOLYSIS_1_DESC = "耐熱性を高める"
+INCREASE_MAX_THERMOLYSIS_3 = "耐熱性 II"
+INCREASE_MAX_THERMOLYSIS_3_DESC = "耐熱性を高める"
+INCREASE_COOLING_RATE_1 = "熱放射 I"
+INCREASE_COOLING_RATE_1_DESC = "熱放散率を上げる"
+INCREASE_COOLING_RATE_3 = "熱放射 II"
+INCREASE_COOLING_RATE_3_DESC = "熱放散率を上げる"
+SELF_REPAIR_1 = "バイオニックアーマー I"
+SELF_REPAIR_1_DESC = "バイオニックアーマー"
+SELF_REPAIR_3 = "バイオニックアーマー II"
+SELF_REPAIR_3_DESC = "バイオニックアーマー"
+INCREASE_TORQUE_1 = "電磁スラスター I"
+INCREASE_TORQUE_1_DESC = "トルクエンジン出力を上げる"
+INCREASE_TORQUE_3 = "電磁スラスター II"
+INCREASE_TORQUE_3_DESC = "トルクエンジン出力を上げる"
+INCREASE_THRUST_1 = "Fusion Engine I"
+INCREASE_THRUST_1_DESC = "推進エンジン出力を上げる"
+INCREASE_THRUST_3 = "Fusion Engine II"
+INCREASE_THRUST_3_DESC = "推進エンジン出力を上げる"
+INCREASE_WEAPON_DROP_CHANCE = "高次検出器"
+INCREASE_WEAPON_DROP_CHANCE_DESC = "武器が落ちる可能性を高める"
+MORE_OPTIONS = "ハイエンドCPU"
+MORE_OPTIONS_DESC = "アップグレード中にオプションのアイテムを追加する"
+MORE_AMMO = "拡張された爆弾倉"
+MORE_AMMO_DESC = "武器の初期弾薬容量を増やします"
+VAMPIRE = "武器の初期弾薬容量を増やします"
+VAMPIRE_DESC = "敵へのダメージから回復する"
+INFECTIOUS = "パスワードクラッキングモジュール"
+INFECTIOUS_DESC = "敵が死ぬと、味方になるチャンスがあります"
+NECROMANCY = "UAV組立ライン"
+NECROMANCY_DESC = "周りに攻撃ドローンを生成する"
+FLASH = "もっと早く"
+FLASH_DESC = "武器の発射速度を上げる"
+HELP_TEXT = "[center][i]遊び方[/i][/center]
+
+あなたは特定の宇宙派の最後の生存者です。あなたの「パルサー」戦闘機を運転して、敵の攻撃の無限の波を生き残るようにしてください！
+
+[b]基本的なルール[/b]
+
+- 敵の船を破壊してポイントを獲得し、武器パックをランダムにドロップします
+- あなたは致命的な力の場の広がりを遅くするためにノンストップで戦わなければなりません
+- スコアが特定の段階に達すると、強化されたコンポーネントを取得できます
+
+[b]コントロール[/b]
+
+ゲームメニューの下：
+	
+	Up / Down - オプションの切り替え
+	Space - 確認
+	ESC - 戻る
+
+戦闘中：
+
+	Up - 加速する
+	Left / Right - に向ける
+	Z - 武器を切り替える
+	X - 武器を手に取る
+	Space - 攻撃
+	ESC - 一時停止"

@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=2]
+[ext_resource path="res://scenes/ships/enemy_ships/Believer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ships/enemy_ships/Guardian.gd" type="Script" id=4]
+[ext_resource path="res://assets/image/chaser.png" type="Texture" id=5]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 600.0
+
+[node name="Guardian" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+code_name = "Guardian"
+max_hp = 100.0
+max_linear_speed = 180.0
+max_thrust = 40.0
+max_torque = 20.0
+team = 0
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="combat drone" parent="SPrite/Chartlet" index="0"]
+texture = ExtResource( 5 )
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="EnemyDetector" index="0"]
+shape = SubResource( 3 )

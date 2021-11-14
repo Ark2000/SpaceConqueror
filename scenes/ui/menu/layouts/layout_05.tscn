@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/Separator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/layouts/empty_layout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/menu/layouts/layout_05.gd" type="Script" id=4]
+
+[node name="LayoutContainer" instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="TopPlaceHolder" parent="." index="0"]
+margin_bottom = 180.0
+
+[node name="ListButton4" parent="." index="1" instance=ExtResource( 3 )]
+margin_top = 180.0
+margin_bottom = 220.0
+
+[node name="Left" parent="ListButton4/HBoxContainer" index="0"]
+margin_right = 559.0
+text = "  OVERALL VOLUME:"
+
+[node name="Right" parent="ListButton4/HBoxContainer" index="1"]
+margin_left = 563.0
+text = "100%  "
+
+[node name="Seperator3" parent="." index="2" instance=ExtResource( 1 )]
+margin_top = 220.0
+margin_bottom = 228.0
+
+[node name="ListButton" parent="." index="3" instance=ExtResource( 3 )]
+margin_top = 228.0
+margin_bottom = 268.0
+
+[node name="Left" parent="ListButton/HBoxContainer" index="0"]
+margin_right = 559.0
+text = "  SOUND EFFECTS VOLUME:"
+
+[node name="Right" parent="ListButton/HBoxContainer" index="1"]
+margin_left = 563.0
+text = "100%  "
+
+[node name="Seperator" parent="." index="4" instance=ExtResource( 1 )]
+margin_top = 268.0
+margin_bottom = 276.0
+
+[node name="ListButton2" parent="." index="5" instance=ExtResource( 3 )]
+margin_top = 276.0
+margin_bottom = 316.0
+
+[node name="Left" parent="ListButton2/HBoxContainer" index="0"]
+margin_right = 559.0
+text = "  MUSIC VOLUME:"
+
+[node name="Right" parent="ListButton2/HBoxContainer" index="1"]
+margin_left = 563.0
+text = "100%  "
+
+[node name="Seperator2" parent="." index="6" instance=ExtResource( 1 )]
+margin_top = 316.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="ListButton3" parent="." index="7" instance=ExtResource( 3 )]
+margin_top = 356.0
+margin_bottom = 396.0
+
+[node name="Left" parent="ListButton3/HBoxContainer" index="0"]
+text = "  GO BACK"
+
+[node name="BottomPlaceHolder" parent="." index="8"]
+margin_top = 396.0
+
+[editable path="ListButton4"]
+[editable path="ListButton"]
+[editable path="Seperator"]
+[editable path="ListButton2"]
+[editable path="ListButton3"]

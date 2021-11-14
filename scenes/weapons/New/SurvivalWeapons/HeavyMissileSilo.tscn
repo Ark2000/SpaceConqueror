@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/weapons/New/ProjectileLauncher.tscn" type="PackedScene" id=1]
+
+[node name="HeavyMissileSilo" instance=ExtResource( 1 )]
+weapon_name = "Heavy Missile Silo"
+projectile_code = "HeavyMissile"
+max_cd = 3.0
+heat = 80.0
+max_ammo = 20.0

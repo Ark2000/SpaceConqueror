@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/ListButtonWithDesc.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/font/SourceHanSansCN-Light-2.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.1, 0.1, 0.1, 0.901961 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 3 )
+
+[node name="ListButtonWithDesc" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ListButton" parent="." instance=ExtResource( 2 )]
+
+[node name="Desc" type="Control" parent="."]
+margin_top = 40.0
+margin_right = 640.0
+margin_bottom = 40.0
+rect_clip_content = true
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Desc"]
+margin_right = 640.0
+margin_bottom = 37.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Text for example"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[editable path="ListButton"]

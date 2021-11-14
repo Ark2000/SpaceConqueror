@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sound/Thrust_Loop.wav" type="AudioStream" id=1]
+[ext_resource path="res://scenes/misc/AfterburnerFlame.gd" type="Script" id=2]
+[ext_resource path="res://assets/image/flame/afterburner+4.png" type="Texture" id=6]
+[ext_resource path="res://assets/image/flame/large~2.png" type="Texture" id=9]
+[ext_resource path="res://assets/image/flame/large~0.png" type="Texture" id=10]
+[ext_resource path="res://assets/image/flame/large~1.png" type="Texture" id=11]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 3
+fps = 60.0
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 11 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 9 )
+frame_2/delay_sec = 0.0
+
+[node name="AfterburnerFlame" type="Node2D"]
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 5.00002, 0 )
+rotation = 1.5708
+scale = Vector2( 0.459, 0.21 )
+texture = SubResource( 1 )
+
+[node name="afterburner+4" type="Sprite" parent="."]
+position = Vector2( -4, 0 )
+rotation = 1.5708
+texture = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -50.0
+pitch_scale = 0.2
+autoplay = true
+bus = "SFX-BATTLE"

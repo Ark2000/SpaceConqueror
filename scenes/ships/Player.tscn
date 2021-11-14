@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/misc/AfterburnerFlame.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ships/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=4]
+[ext_resource path="res://scenes/ships/BaseShip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/image/berserker.png" type="Texture" id=7]
+[ext_resource path="res://assets/image/flivver.png" type="Texture" id=8]
+[ext_resource path="res://scenes/weapons/New/ProjectileLauncher.tscn" type="PackedScene" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 2.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+
+[node name="Player" instance=ExtResource( 6 )]
+mass = 1.0
+script = ExtResource( 2 )
+code_name = "Pulsar"
+max_thrust = 240.0
+collision_damage_multiplier = 0.1
+death_bloom_size = 4.0
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+visible = false
+polygon = PoolVector2Array( -7.59721, -23.0881, -14.3445, -0.488422, -7.29991, 23.7369, 3.25071, 24.3454, 7.97702, 10.1279, 27.7493, 4.62168, 30.9196, 0.617159, 27.2488, -4.38849, 7.39303, -9.64442, 2.80526, -22.9836 )
+
+[node name="AfterburnerFlame" parent="Afterburners" index="0" instance=ExtResource( 1 )]
+position = Vector2( -15.2731, -6.28592 )
+scale = Vector2( 0.794, 1 )
+
+[node name="AfterburnerFlame2" parent="Afterburners" index="1" instance=ExtResource( 1 )]
+position = Vector2( -15.2731, 6.21558 )
+scale = Vector2( 0.794, 1 )
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="berserker" type="Sprite" parent="SPrite/Chartlet" index="0"]
+use_parent_material = true
+position = Vector2( 6.61256, 0 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="flivver" type="Sprite" parent="SPrite/Chartlet/berserker" index="0"]
+show_behind_parent = true
+use_parent_material = true
+position = Vector2( -4.76837e-07, -8.84332 )
+texture = ExtResource( 8 )
+
+[node name="CrackMask" parent="SPrite" index="1"]
+position = Vector2( 1.2265, -2.83846 )
+scale = Vector2( 0.12551, 0.194754 )
+
+[node name="MiniBlaster" parent="Weapons" index="0" instance=ExtResource( 9 )]
+position = Vector2( 24, 0 )
+weapon_name = "Mini Blaster"
+max_cd = 0.15
+heat = 10.0
+max_ammo = 10000.0
+
+[node name="MiniBlaster2" parent="Weapons" index="1" instance=ExtResource( 9 )]
+position = Vector2( 24, 0 )
+weapon_id = 1
+weapon_name = "Mini Blaster"
+max_cd = 0.15
+heat = 10.0
+max_ammo = 10000.0
+
+[node name="MiniBlaster3" parent="Weapons" index="2" instance=ExtResource( 9 )]
+position = Vector2( 24, 0 )
+weapon_id = 2
+weapon_name = "Mini Blaster"
+max_cd = 0.15
+heat = 10.0
+max_ammo = 10000.0
+
+[node name="Shield" parent="." index="5"]
+material = SubResource( 2 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="_Shield" parent="Shield" index="0"]
+modulate = Color( 2, 2, 2, 1 )
+material = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyDetector" index="0"]
+position = Vector2( -15, 8.98984 )
+rotation = 0.00533845
+polygon = PoolVector2Array( 22.5978, -7.72403, 1275.5, -235.802, 1286.86, 206.143 )
+
+[node name="Drones" type="Timer" parent="." index="8"]
+autostart = true
+
+[node name="Pick" type="Timer" parent="." index="9"]
+one_shot = true
+
+[connection signal="timeout" from="Drones" to="." method="_on_Drones_timeout"]

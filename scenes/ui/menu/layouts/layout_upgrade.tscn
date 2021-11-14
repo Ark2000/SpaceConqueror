@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/Separator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/layouts/empty_layout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/menu/layouts/layout_upgrade.gd" type="Script" id=4]
+[ext_resource path="res://assets/res/bold_font_32.tres" type="DynamicFont" id=5]
+
+[node name="LayoutContainer" instance=ExtResource( 2 )]
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="." index="0"]
+margin_right = 640.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 5 )
+text = "UPGRADE"
+align = 1
+valign = 1
+
+[node name="TopPlaceHolder" parent="." index="1"]
+margin_top = 33.0
+margin_bottom = 276.0
+
+[node name="S" parent="." index="2" instance=ExtResource( 1 )]
+margin_top = 276.0
+margin_bottom = 292.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="ListButton" parent="." index="3" instance=ExtResource( 3 )]
+margin_top = 292.0
+margin_bottom = 332.0
+
+[node name="Left" parent="ListButton/HBoxContainer" index="0"]
+text = "  CONFIRM"
+
+[node name="BottomPlaceHolder" parent="." index="4"]
+margin_top = 332.0
+
+[editable path="ListButton"]

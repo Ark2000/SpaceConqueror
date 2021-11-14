@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/weapons/New/Laser.tscn" type="PackedScene" id=1]
+
+[node name="Laser" instance=ExtResource( 1 )]
+max_length = 800.0
+max_ammo = 40.0
+heat = 62.0

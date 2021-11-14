@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=2]
+[ext_resource path="res://scenes/misc/AfterburnerFlame.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ships/enemy_ships/Paladin.gd" type="Script" id=4]
+[ext_resource path="res://scenes/weapons/New/Aureola.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ships/enemy_ships/EnemyBaseShip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/image/arrow.png" type="Texture" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+
+[node name="Paladin" instance=ExtResource( 6 )]
+mass = 1.0
+script = ExtResource( 4 )
+code_name = "Paladin"
+max_linear_speed = 260.0
+max_thrust = 1000.0
+max_torque = 100.0
+collision_resistance_multiplier = 0.1
+collision_damage_multiplier = 2.0
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -34.6045, -16.3385, -36.6879, 15.608, -14.2659, 5.28986, 34.5467, 3.3056, 41.0947, -0.563686, 34.2491, -3.73849, -14.4643, -4.92904 )
+
+[node name="AfterburnerFlame" parent="Afterburners" index="0" instance=ExtResource( 3 )]
+position = Vector2( -35.7915, -0.0952187 )
+scale = Vector2( 1.151, 1.5 )
+
+[node name="Aureola" parent="Weapons" index="0" instance=ExtResource( 5 )]
+position = Vector2( 0.150757, -0.408173 )
+damage = 100.0
+radius = 200.0
+max_ammo = 2000.0
+heat = 10.0
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SPrite/Chartlet" index="0"]
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 2 )
+
+[node name="ChargeTimer" type="Timer" parent="." index="8"]
+one_shot = true
+autostart = true
+
+[node name="WaitTimer" type="Timer" parent="." index="9"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Tween" type="Tween" parent="." index="10"]
+
+[node name="Label" type="Label" parent="." index="11"]
+margin_left = -20.2515
+margin_top = -27.002
+margin_right = 19.7485
+margin_bottom = -13.002
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="." index="12"]
+margin_left = -19.2504
+margin_top = 14.0443
+margin_right = 20.7496
+margin_bottom = 28.0443
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="." index="13"]
+margin_left = -19.5841
+margin_top = 32.3984
+margin_right = 20.4159
+margin_bottom = 46.3984
+__meta__ = {
+"_edit_use_anchors_": false
+}

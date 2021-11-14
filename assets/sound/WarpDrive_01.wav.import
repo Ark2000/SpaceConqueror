@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/WarpDrive_01.wav-3800665c619b9b624d72d4dca1c2c01a.sample"
+
+[deps]
+
+source_file="res://assets/sound/WarpDrive_01.wav"
+dest_files=[ "res://.import/WarpDrive_01.wav-3800665c619b9b624d72d4dca1c2c01a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

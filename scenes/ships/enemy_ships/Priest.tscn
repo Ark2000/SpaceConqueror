@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/ships/enemy_ships/Priest.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/quicksilver.png" type="Texture" id=2]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=4]
+[ext_resource path="res://scenes/misc/AfterburnerFlame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ships/enemy_ships/EnemyBaseShip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/weapons/New/Laser.tscn" type="PackedScene" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+
+[node name="Priest" instance=ExtResource( 6 )]
+mass = 1.5
+script = ExtResource( 1 )
+code_name = "Priest"
+max_hp = 150.0
+max_shield = 100.0
+max_heat = 240.0
+max_linear_speed = 240.0
+max_thrust = 900.0
+max_torque = 540.0
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+visible = false
+polygon = PoolVector2Array( -34.125, -29, -35.5, 28.125, 42.25, 7.875, 41.75, -8.25 )
+
+[node name="AfterburnerFlame" parent="Afterburners" index="0" instance=ExtResource( 5 )]
+position = Vector2( -41.8394, -12.2765 )
+scale = Vector2( 1.112, 2.27 )
+
+[node name="AfterburnerFlame2" parent="Afterburners" index="1" instance=ExtResource( 5 )]
+position = Vector2( -41.8394, 12.1463 )
+scale = Vector2( 1.112, 2.27 )
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="SPrite/Chartlet" index="0"]
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="CrackMask" parent="SPrite" index="1"]
+position = Vector2( -9.82153, -1.40308 )
+scale = Vector2( 0.187231, 0.237053 )
+
+[node name="Laser" parent="Weapons" index="0" instance=ExtResource( 7 )]
+cast_speed = 1600.0
+max_length = 1200.0
+growth_time = 0.3
+max_ammo = 1000.0
+heat = 70.0
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 2 )
+
+[node name="Label" type="Label" parent="." index="8"]
+margin_left = -27.5
+margin_top = -37.75
+margin_right = 12.5
+margin_bottom = -23.75
+__meta__ = {
+"_edit_use_anchors_": false
+}

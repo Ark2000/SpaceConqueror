@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/menu/elements/Separator.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/menu/layouts/empty_layout.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/menu/elements/ListButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/menu/elements/Image.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/menu/layouts/layout_09.gd" type="Script" id=5]
+
+[node name="LayoutContainer" instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="TopPlaceHolder" parent="." index="0"]
+margin_bottom = 70.0
+
+[node name="Image" parent="." index="1" instance=ExtResource( 4 )]
+margin_top = 70.0
+margin_bottom = 370.0
+
+[node name="Seperator4" parent="." index="2" instance=ExtResource( 1 )]
+margin_top = 370.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="ListButton" parent="." index="3" instance=ExtResource( 3 )]
+margin_top = 410.0
+margin_bottom = 450.0
+
+[node name="Left" parent="ListButton/HBoxContainer" index="0"]
+margin_right = 588.0
+text = "  VIBRATIONS:"
+
+[node name="Right" parent="ListButton/HBoxContainer" index="1"]
+margin_left = 592.0
+text = "ON  "
+
+[node name="Seperator5" parent="." index="4" instance=ExtResource( 1 )]
+margin_top = 450.0
+margin_bottom = 466.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="ListButton2" parent="." index="5" instance=ExtResource( 3 )]
+margin_top = 466.0
+margin_bottom = 506.0
+
+[node name="Left" parent="ListButton2/HBoxContainer" index="0"]
+text = "  GO BACK"
+
+[node name="BottomPlaceHolder" parent="." index="6"]
+margin_top = 506.0
+
+[editable path="ListButton"]
+[editable path="ListButton2"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ville_seppanen-1_g.ogg-7a134790613b052084dbe08e8a830237.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/ville_seppanen-1_g.ogg"
+dest_files=[ "res://.import/ville_seppanen-1_g.ogg-7a134790613b052084dbe08e8a830237.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

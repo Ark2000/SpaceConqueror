@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Seperator" type="Control"]
+margin_top = 236.0
+margin_right = 640.0
+margin_bottom = 244.0
+rect_min_size = Vector2( 0, 8 )

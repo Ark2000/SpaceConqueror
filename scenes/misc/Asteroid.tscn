@@ -1,0 +1,96 @@
+[gd_scene load_steps=64 format=2]
+
+[ext_resource path="res://scenes/misc/Asteroid.gd" type="Script" id=1]
+[ext_resource path="res://assets/image/large rock/spin-33.png" type="Texture" id=2]
+[ext_resource path="res://assets/image/large rock/spin-43.png" type="Texture" id=3]
+[ext_resource path="res://assets/image/large rock/spin-28.png" type="Texture" id=4]
+[ext_resource path="res://assets/image/large rock/spin-14.png" type="Texture" id=5]
+[ext_resource path="res://assets/image/large rock/spin-02.png" type="Texture" id=6]
+[ext_resource path="res://assets/image/large rock/spin-40.png" type="Texture" id=7]
+[ext_resource path="res://assets/image/large rock/spin-51.png" type="Texture" id=8]
+[ext_resource path="res://assets/image/large rock/spin-45.png" type="Texture" id=9]
+[ext_resource path="res://assets/image/large rock/spin-03.png" type="Texture" id=10]
+[ext_resource path="res://assets/image/large rock/spin-04.png" type="Texture" id=11]
+[ext_resource path="res://assets/image/large rock/spin-25.png" type="Texture" id=12]
+[ext_resource path="res://assets/image/large rock/spin-39.png" type="Texture" id=13]
+[ext_resource path="res://assets/image/large rock/spin-20.png" type="Texture" id=14]
+[ext_resource path="res://assets/image/large rock/spin-23.png" type="Texture" id=15]
+[ext_resource path="res://assets/image/large rock/spin-59.png" type="Texture" id=16]
+[ext_resource path="res://assets/image/large rock/spin-22.png" type="Texture" id=17]
+[ext_resource path="res://assets/image/large rock/spin-24.png" type="Texture" id=18]
+[ext_resource path="res://assets/image/large rock/spin-21.png" type="Texture" id=19]
+[ext_resource path="res://assets/image/large rock/spin-13.png" type="Texture" id=20]
+[ext_resource path="res://assets/image/large rock/spin-11.png" type="Texture" id=21]
+[ext_resource path="res://assets/image/large rock/spin-41.png" type="Texture" id=22]
+[ext_resource path="res://assets/image/large rock/spin-26.png" type="Texture" id=23]
+[ext_resource path="res://assets/image/large rock/spin-48.png" type="Texture" id=24]
+[ext_resource path="res://assets/image/large rock/spin-38.png" type="Texture" id=25]
+[ext_resource path="res://assets/image/large rock/spin-19.png" type="Texture" id=26]
+[ext_resource path="res://assets/image/large rock/spin-58.png" type="Texture" id=27]
+[ext_resource path="res://assets/image/large rock/spin-00.png" type="Texture" id=28]
+[ext_resource path="res://assets/image/large rock/spin-16.png" type="Texture" id=29]
+[ext_resource path="res://assets/image/large rock/spin-46.png" type="Texture" id=30]
+[ext_resource path="res://assets/image/large rock/spin-32.png" type="Texture" id=31]
+[ext_resource path="res://assets/image/large rock/spin-35.png" type="Texture" id=32]
+[ext_resource path="res://assets/image/large rock/spin-36.png" type="Texture" id=33]
+[ext_resource path="res://assets/image/large rock/spin-10.png" type="Texture" id=34]
+[ext_resource path="res://assets/image/large rock/spin-12.png" type="Texture" id=35]
+[ext_resource path="res://assets/image/large rock/spin-37.png" type="Texture" id=36]
+[ext_resource path="res://assets/image/large rock/spin-07.png" type="Texture" id=37]
+[ext_resource path="res://assets/image/large rock/spin-54.png" type="Texture" id=38]
+[ext_resource path="res://assets/image/large rock/spin-18.png" type="Texture" id=39]
+[ext_resource path="res://assets/image/large rock/spin-53.png" type="Texture" id=40]
+[ext_resource path="res://assets/image/large rock/spin-49.png" type="Texture" id=41]
+[ext_resource path="res://assets/image/large rock/spin-55.png" type="Texture" id=42]
+[ext_resource path="res://assets/image/large rock/spin-56.png" type="Texture" id=43]
+[ext_resource path="res://assets/image/large rock/spin-31.png" type="Texture" id=44]
+[ext_resource path="res://assets/image/large rock/spin-42.png" type="Texture" id=45]
+[ext_resource path="res://assets/image/large rock/spin-57.png" type="Texture" id=46]
+[ext_resource path="res://assets/image/large rock/spin-29.png" type="Texture" id=47]
+[ext_resource path="res://assets/image/large rock/spin-44.png" type="Texture" id=48]
+[ext_resource path="res://assets/image/large rock/spin-08.png" type="Texture" id=49]
+[ext_resource path="res://assets/image/large rock/spin-30.png" type="Texture" id=50]
+[ext_resource path="res://assets/image/large rock/spin-34.png" type="Texture" id=51]
+[ext_resource path="res://assets/image/large rock/spin-50.png" type="Texture" id=52]
+[ext_resource path="res://assets/image/large rock/spin-15.png" type="Texture" id=53]
+[ext_resource path="res://assets/image/large rock/spin-05.png" type="Texture" id=54]
+[ext_resource path="res://assets/image/large rock/spin-17.png" type="Texture" id=55]
+[ext_resource path="res://assets/image/large rock/spin-06.png" type="Texture" id=56]
+[ext_resource path="res://assets/image/large rock/spin-47.png" type="Texture" id=57]
+[ext_resource path="res://assets/image/large rock/spin-09.png" type="Texture" id=58]
+[ext_resource path="res://assets/image/large rock/spin-52.png" type="Texture" id=59]
+[ext_resource path="res://assets/image/large rock/spin-27.png" type="Texture" id=60]
+[ext_resource path="res://assets/image/large rock/spin-01.png" type="Texture" id=61]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 38.313
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 61 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 37 ), ExtResource( 49 ), ExtResource( 58 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 35 ), ExtResource( 20 ), ExtResource( 5 ), ExtResource( 53 ), ExtResource( 29 ), ExtResource( 55 ), ExtResource( 39 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 23 ), ExtResource( 60 ), ExtResource( 4 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 44 ), ExtResource( 31 ), ExtResource( 2 ), ExtResource( 51 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 36 ), ExtResource( 25 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 22 ), ExtResource( 45 ), ExtResource( 3 ), ExtResource( 48 ), ExtResource( 9 ), ExtResource( 30 ), ExtResource( 57 ), ExtResource( 24 ), ExtResource( 41 ), ExtResource( 52 ), ExtResource( 8 ), ExtResource( 59 ), ExtResource( 40 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 27 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 60.0
+} ]
+
+[node name="Asteroid" type="RigidBody2D"]
+collision_layer = 3
+mass = 600.0
+gravity_scale = 0.0
+linear_damp = 0.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+frame = 26
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

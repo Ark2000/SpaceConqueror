@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/shader/flame.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/shader/bulb.gdshader" type="Shader" id=2]
+[ext_resource path="res://assets/shader/outline.gdshader" type="Shader" id=3]
+[ext_resource path="res://assets/shader/Shield.gdshader" type="Shader" id=4]
+[ext_resource path="res://scenes/misc/AfterburnerFlame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ships/enemy_ships/Martyr.gd" type="Script" id=6]
+[ext_resource path="res://scenes/ships/enemy_ships/EnemyBaseShip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/weapons/New/SuicideBomber.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/image/fury.png" type="Texture" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/p1 = 1.991
+shader_param/p2 = 10.375
+shader_param/p3 = 1.5
+shader_param/p5 = 1.0
+shader_param/p4 = Color( 0.964706, 0.639216, 0.380392, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/r = 1.0
+shader_param/g = 1.2
+shader_param/b = 1.4
+shader_param/p1 = 1.0
+shader_param/p2 = 0.1
+shader_param/p3 = 1.0
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/line_color = Color( 1, 1, 1, 1 )
+shader_param/line_thickness = 1.0
+shader_param/line_multiplier = 0.0
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("SPrite/Chartlet/fury:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.298039, 0.298039, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "banzai"
+} ]
+}
+
+[node name="Martyr" instance=ExtResource( 7 )]
+mass = 1.0
+script = ExtResource( 6 )
+code_name = "Martyr"
+max_linear_speed = 180.0
+max_thrust = 1000.0
+max_torque = 500.0
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -18.7686, -14.8891, -18.3717, 17.6526, 1.96685, 12.4935, 22.3054, 0.0919495, 1.66922, -13.2025 )
+
+[node name="AfterburnerFlame" parent="Afterburners" index="0" instance=ExtResource( 5 )]
+position = Vector2( -18.4963, 0.0659366 )
+scale = Vector2( 0.8, 1.5 )
+
+[node name="Flame" parent="Afterburners/AfterburnerFlame" index="0"]
+material = SubResource( 1 )
+
+[node name="Bulb" parent="Afterburners/AfterburnerFlame" index="1"]
+material = SubResource( 2 )
+
+[node name="SuicideBomber" parent="Weapons" index="0" instance=ExtResource( 8 )]
+
+[node name="Chartlet" parent="SPrite" index="0"]
+material = SubResource( 3 )
+
+[node name="fury" type="Sprite" parent="SPrite/Chartlet" index="0"]
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 9 )
+
+[node name="_Shield" parent="Shield" index="0"]
+material = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+anims/banzai = SubResource( 5 )
+
+[editable path="Afterburners/AfterburnerFlame"]
