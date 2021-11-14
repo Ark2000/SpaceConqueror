@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/misc/Explosion/Explosion.gd" type="Script" id=61]
+[ext_resource path="res://scenes/misc/explosion/Explosion.gd" type="Script" id=61]
 [ext_resource path="res://assets/image/flare_01.png" type="Texture" id=62]
 [ext_resource path="res://assets/image/halo.png" type="Texture" id=63]
 
